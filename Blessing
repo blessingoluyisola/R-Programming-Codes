@@ -6,3 +6,5 @@ View(penguins)
 
 #TO CHECK THE PACKAGES ALREADY INSTALLED IN R
 install.packages()
+install.packages("tidyverse")
+library("tidyverse")
