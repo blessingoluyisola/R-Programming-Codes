@@ -3,3 +3,6 @@ install.packages("palmerpenguins")
 library("palmerpenguins")
 summary(penguins)
 View(penguins)
+
+#TO CHECK THE PACKAGES ALREADY INSTALLED IN R
+install.packages()
