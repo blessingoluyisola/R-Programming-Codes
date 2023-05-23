@@ -8,3 +8,23 @@ View(penguins)
 install.packages()
 install.packages("tidyverse")
 library("tidyverse")
+#USING THE TOOTHGROWTH DATASET
+#LOAD DATA ALREADY EXISTING IN R 
+data("ToothGrowth")
+View(ToothGrowth)
+install.packages("dplyr")
+library(dplyr)
+filtered_tg<- filter(ToothGrowth,dose==0.5)
+View(filtered_tg)
+arrange(filtered_tg,len)
+#USING NESTED CODES TO GET SAME RESULT
+arrange(filter(ToothGrowth,dose==0.5),len)
+#USING PIPES (CTRL+SHIFT+M)
+filtered_toothgrowth<-ToothGrowth %>%
++ filter(dose==0.5) %>% 
++ arrange(len)
+#USING PIPES CONT. TREATING MISSING VALUES AT THE SAME TIME
+filtered_toothgrowth<-ToothGrowth %>%
++   filter(dose==0.5) %>% 
++   group_by(supp) %>% 
++   summarise(mean_len=mean(len,na.rm=T),.group="drop")
